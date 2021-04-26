@@ -30,12 +30,13 @@ public class ShoppingCart {
         boolean created = driver.findElement(By.cssSelector("[class=confirmation_message]")).isDisplayed();
         Assert.assertTrue(created, "Регистрации не прошла");
         //СОХРАНИТЬ LOGIN И PASSWORD
-        String email = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/b")).getText();
-        String password = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]")).getText();
+        String email = driver.findElement(By.xpath("(//b)[2]")).getText();
+//        String password = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]")).getText();
         driver.findElement(By.linkText("here")).click();
         //ПРОИЗВЕСТИ РЕГИСТРАЦИЮ, ЗАПОЛНИВ LOGIN И PASSWORD
         driver.findElement(By.name("email")).sendKeys(email);
-        driver.findElement(By.name("password")).sendKeys(password);
+        driver.findElement(By.name("password")).sendKeys("1111");
+//        driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
         // УБЕДИТЬСЯ,ЧТО АВТОРИТИЗАЦИЯ ПРОШЛА УСПЕШНО
         boolean cart = driver.findElement(By.linkText("Shopping Cart")).isDisplayed();
@@ -82,12 +83,11 @@ public class ShoppingCart {
         boolean created = driver.findElement(By.cssSelector("[class=confirmation_message]")).isDisplayed();
         Assert.assertTrue(created, "Регистрации не прошла");
         //СОХРАНИТЬ LOGIN И PASSWORD
-        String email = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/b")).getText();
-        String password = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]")).getText();
+        String email = driver.findElement(By.xpath("(//b)[2]")).getText();
         driver.findElement(By.linkText("here")).click();
         //ПРОИЗВЕСТИ РЕГИСТРАЦИЮ, ЗАПОЛНИВ LOGIN И PASSWORD
         driver.findElement(By.name("email")).sendKeys(email);
-        driver.findElement(By.name("password")).sendKeys(password);
+        driver.findElement(By.name("password")).sendKeys("1111");
         driver.findElement(By.cssSelector("[value=Login]")).click();
         // УБЕДИТЬСЯ,ЧТО АВТОРИТИЗАЦИЯ ПРОШЛА УСПЕШНО
         boolean cart = driver.findElement(By.linkText("Shopping Cart")).isDisplayed();
